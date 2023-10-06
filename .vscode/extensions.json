@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "mikehanson.auto-barrel",
+        "EditorConfig.EditorConfig",
+        "dsznajder.es7-react-js-snippets",
+        "formulahendry.auto-close-tag",
+        "rome.rome",
+        "usernamehw.errorlens",
+        "yoavbls.pretty-ts-errors"
+    ]
+}

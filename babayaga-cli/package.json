@@ -1,0 +1,12 @@
+{
+    "name": "babayaga-cli",
+    "version": "1.0.0",
+    "description": "Un generador de archivos para proyectos de LatamAutos",
+    "dependencies": {
+      "fs-extra": "^11.1.1"
+    },
+    "bin": {
+      "babayaga": "./bin/babayaga.js"
+    }
+  }
+  

@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 const fs = require('fs-extra')
 const path = require('path')
-const pageTemplate = require('../templates/pageTemplate')
+const layoutTemplate = require('../templates/layoutTemplate')
 
 module.exports = (fileName) => {
-  const serviceDir = path.join('src/pages', fileName)
+  const serviceDir = path.join('src/layouts', fileName)
   const serviceFile = path.join(serviceDir, `${fileName}.tsx`)
 
   const indexFile = path.join(serviceDir, 'index.ts')
 
-  const template = pageTemplate(fileName)
+  const template = layoutTemplate(fileName)
 
   fs.mkdirpSync(serviceDir)
 
@@ -17,5 +17,5 @@ module.exports = (fileName) => {
 
   fs.writeFileSync(indexFile, `export * from './${fileName}'`)
 
-  console.log(`Se ha creado la página ${fileName} en ${serviceDir}`)
+  console.log(`Se ha creado el layout ${fileName} en ${serviceDir}`)
 }

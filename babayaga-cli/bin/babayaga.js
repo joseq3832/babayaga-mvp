@@ -9,6 +9,12 @@ if (command === 'make:service') {
 } else if (command === 'make:page') {
   const makePage = require('../src/commands/makePage')
   makePage(fileName)
+} else if (command === 'make:layout') {
+  const makePage = require('../src/commands/makeLayout')
+  makePage(fileName)
+} else if (command === 'make:component') {
+  const makePage = require('../src/commands/makeComponent')
+  makePage(fileName)
 } else {
   console.error('Comando no reconocido o nombre de archivo faltante.')
 }

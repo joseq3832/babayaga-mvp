@@ -5,9 +5,10 @@ const singleStoreTemplate = require('../templates/singleStoreTemplate')
 const storeTemplate = require('../templates/storeTemplate')
 const typeTemplate = require('../templates/typeTemplate')
 const queriesTemplate = require('../templates/queriesTemplate')
+const persistStoreTemplate = require('../templates/persistStoreTemplate')
 const capitalizeFirstLetter = require('../utils')
 
-module.exports = (fileName, params) => {
+module.exports = (fileName, all, persist) => {
   const storeDir = path.join('src/stores', fileName)
 
   const storeFile = path.join(storeDir, 'store.tsx')
@@ -23,14 +24,23 @@ module.exports = (fileName, params) => {
     resourceNameUppercase,
   )
 
-  if (params === '--all') {
-    const templateStore = storeTemplate(resourceName, resourceNameUppercase)
+  if (all === '--all') {
     const templateType = typeTemplate(resourceName, resourceNameUppercase)
     const templateQueries = queriesTemplate(resourceName, resourceNameUppercase)
 
     fs.mkdirpSync(storeDir)
 
-    fs.writeFileSync(storeFile, templateStore)
+    if (persist === '--persist') {
+      const templateStorePersist = persistStoreTemplate(
+        resourceName,
+        resourceNameUppercase,
+      )
+      fs.writeFileSync(storeFile, templateStorePersist)
+    } else {
+      const templateStore = storeTemplate(resourceName, resourceNameUppercase)
+      fs.writeFileSync(storeFile, templateStore)
+    }
+
     fs.writeFileSync(typesFile, templateType)
     fs.writeFileSync(queriesFile, templateQueries)
     fs.writeFileSync(indexFile, `export * from './store'`)

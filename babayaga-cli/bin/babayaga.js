@@ -2,7 +2,8 @@
 const args = process.argv.slice(2)
 const command = args[0]
 const fileName = args[1]
-const params = args[2]
+const all = args[2]
+const persist = args[3]
 
 if (command === 'make:service') {
   const makeService = require('../src/commands/makeService')
@@ -18,7 +19,7 @@ if (command === 'make:service') {
   makeComponent(fileName)
 } else if (command === 'make:store') {
   const makeStore = require('../src/commands/makeStore')
-  makeStore(fileName, params)
+  makeStore(fileName, all, persist)
 } else {
   console.error('Comando no reconocido o nombre de archivo faltante.')
 }

@@ -18,17 +18,17 @@ if (command === 'make:service' && fileName) {
   const InterfaceName = capitalizeFirstLetter(serviceName)
 
   const serviceCode = `
-  import { AxiosResponse } from 'axios';
-  import HttpClient from '@/lib/HttpClient';
+  import HttpClient from '@/lib/HttpClient'
+  import { AxiosResponse } from 'axios'
 
   const ${fileName} = {
     // Sustituir any por IResponse${InterfaceName}
     async request<T = any, R = AxiosResponse<T>>() {
-      return await HttpClient.get<T, R>('${serviceName}');
-    }
-  };
+      return await HttpClient.get<T, R>('${serviceName}')
+    },
+  }
 
-  export default ${fileName};
+  export default ${fileName}
   `
 
   // Crea la carpeta del servicio
@@ -38,7 +38,7 @@ if (command === 'make:service' && fileName) {
   fs.writeFileSync(serviceFile, serviceCode)
 
   // Crea el archivo index.ts
-  fs.writeFileSync(indexFile, `export * from './${fileName}';`)
+  fs.writeFileSync(indexFile, `export * from './${fileName}'`)
 
   console.log(`Se ha creado el servicio ${fileName} en ${serviceDir}`)
 } else {

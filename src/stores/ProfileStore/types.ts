@@ -1,7 +1,7 @@
-export interface userState {
+export interface profileState {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  user: any | null
+  profile: any | null
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  setUser: (user: any) => void
-  resetUserState: () => void
+  setProfile: (profile: any) => void
+  resetProfileState: () => void
 }

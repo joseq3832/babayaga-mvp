@@ -4,7 +4,6 @@ const path = require('path')
 const singleStoreTemplate = require('../templates/singleStoreTemplate')
 const storeTemplate = require('../templates/storeTemplate')
 const typeTemplate = require('../templates/typeTemplate')
-const queriesTemplate = require('../templates/queriesTemplate')
 const persistStoreTemplate = require('../templates/persistStoreTemplate')
 const capitalizeFirstLetter = require('../utils')
 
@@ -14,7 +13,6 @@ module.exports = (fileName, all, persist) => {
   const storeFile = path.join(storeDir, 'store.tsx')
   const indexFile = path.join(storeDir, 'index.ts')
   const typesFile = path.join(storeDir, 'types.ts')
-  const queriesFile = path.join(storeDir, 'queries.ts')
 
   const resourceName = fileName.replace(/Store$/, '').toLowerCase()
   const resourceNameUppercase = capitalizeFirstLetter(resourceName)
@@ -26,7 +24,6 @@ module.exports = (fileName, all, persist) => {
 
   if (all === '--all') {
     const templateType = typeTemplate(resourceName, resourceNameUppercase)
-    const templateQueries = queriesTemplate(resourceName, resourceNameUppercase)
 
     fs.mkdirpSync(storeDir)
 
@@ -42,7 +39,6 @@ module.exports = (fileName, all, persist) => {
     }
 
     fs.writeFileSync(typesFile, templateType)
-    fs.writeFileSync(queriesFile, templateQueries)
     fs.writeFileSync(indexFile, `export * from './store'`)
 
     console.log(

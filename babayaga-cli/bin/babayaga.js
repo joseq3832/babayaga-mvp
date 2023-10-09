@@ -20,6 +20,9 @@ if (command === 'make:service') {
 } else if (command === 'make:store') {
   const makeStore = require('../src/commands/makeStore')
   makeStore(fileName, all, persist)
+} else if (command === 'make:query') {
+  const makeQuery = require('../src/commands/makeQuery')
+  makeQuery(fileName)
 } else {
   console.error('Comando no reconocido o nombre de archivo faltante.')
 }

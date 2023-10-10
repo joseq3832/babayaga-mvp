@@ -31,13 +31,13 @@ Admin is a vehicle management application designed for dealers and clients who l
 ## 🔅 Linter & format
 - Install Biome dependencies on your computer
   - ### macOS arm (M1 or newer)
-    curl -L https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-darwin-arm64 -o biome
-    chmod +x biome
+  curl -L https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-darwin-arm64 -o biome
+  chmod +x biome
   -  ### Linux (x86_64)
-    curl -L https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-linux-x64 -o biome
-    chmod +x biome
+  curl -L https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-linux-x64 -o biome 
+  chmod +x biome
   -  ### Windows (x86_64, Powershell)
-    Invoke-WebRequest -Uri "https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-win32-x64.exe" -OutFile "biome.exe"
+  Invoke-WebRequest -Uri "https://github.com/biomejs/biome/releases/download/cli%2Fv1.2.2/biome-win32-x64.exe" -OutFile "biome.exe"
 
 - Run `pnpm lint` or `pnpm lint:fix`  to run biome linter on all files in the project.
 - Run `pnpm format` to `pnpm format:fix` run format with biome on all files in the project.

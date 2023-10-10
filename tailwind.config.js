@@ -11,8 +11,8 @@ export default {
       colors: {
         provider: {
           facebook: '#1877F2',
-          google: '#4285F4',
-          apple: '#F78C40',
+          google: '#FBBC05',
+          apple: '#999999',
         },
       },
       backgroundImage: {

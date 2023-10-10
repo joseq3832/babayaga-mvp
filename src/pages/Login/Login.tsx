@@ -1,4 +1,4 @@
-import { AuthCard, Consent, Separator, SsoButton } from '@/components'
+import { Consent, LoginCard, Separator, SsoButton } from '@/components'
 import {
   CheckboxInput,
   Form,
@@ -42,7 +42,7 @@ export const Login = (): JSX.Element => {
   }
 
   return (
-    <AuthCard title="Ingresa a tu cuenta" register>
+    <LoginCard title="Ingresa a tu cuenta" register>
       <Form className="m-0 space-y-4" onSubmit={handleSubmit(onSubmitHandler)}>
         <FormGroup>
           <Label htmlFor="email" required>
@@ -68,7 +68,7 @@ export const Login = (): JSX.Element => {
         <div className="flex items-center justify-between">
           <CheckboxInput label="Recordarme" />
           <Link
-            to="/forget-password"
+            to="/forgot-password"
             className="text-blue-600 hover:text-blue-500 text-sm inline-flex"
           >
             Olvidé mi contraseña
@@ -89,6 +89,6 @@ export const Login = (): JSX.Element => {
       <div className="block pt-4">
         <Consent />
       </div>
-    </AuthCard>
+    </LoginCard>
   )
 }

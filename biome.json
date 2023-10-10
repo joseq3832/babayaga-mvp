@@ -21,6 +21,9 @@
       "suspicious": {
         "noConsoleLog": "warn",
         "noDuplicateJsxProps": "error"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       }
     }
   },

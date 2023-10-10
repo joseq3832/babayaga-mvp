@@ -8,7 +8,17 @@ export default {
       fontFamily: {
         sans: ['Relaway', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        provider: {
+          facebook: '#1877F2',
+          google: '#4285F4',
+          apple: '#F78C40',
+        },
+      },
+      backgroundImage: {
+        auth: "url('https://d1zx2a1kk4wi0g.cloudfront.net/ImagesSite/login-background')",
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
